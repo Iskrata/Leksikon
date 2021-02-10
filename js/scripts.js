@@ -1,9 +1,6 @@
-/*!
-    * Start Bootstrap - Grayscale v6.0.3 (https://startbootstrap.com/theme/grayscale)
-    * Copyright 2013-2020 Start Bootstrap
-    * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-grayscale/blob/master/LICENSE)
-    */
-   (function ($) {
+// scripts.js
+
+(function ($) {
     "use strict"; // Start of use strict
 
     // Smooth scrolling using jQuery easing
@@ -59,30 +56,49 @@ $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
   });
 
-
-
+// POST request jQuery
+jQuery.postCORS = function(url, data, func) {
+    if(func == undefined) func = function(){};
+    return $.ajax({
+      type: 'POST', 
+      url: url, 
+      data: data, 
+      dataType: 'json', 
+      crossDomain:true,
+      contentType: 'application/x-www-form-urlencoded', 
+      xhrFields: { withCredentials: true }, 
+      success: function(res) { func(res) }, 
+      error: function() { 
+              func({}) 
+      }
+    });
+}
 
 function onSubmit(){
-    window.post = function(url, data) {
-        return fetch(url, {method: "POST", body: JSON.stringify(data)});
-    }
-
     var input = document.getElementById("exampleFormControlTextarea1").value;
-    //url_req = input.replaceAll(" ", "%20");
 
+    // примерен вход: Юнак без , рана не може
     // req
-    var response = post("http://0.0.0.0:5000/", {element: input}); // не работи :(
-    //var response = [1, 4, ["Липсва запетая -> Мисля<mark> че</mark> той го заслужава. <br>Липсва запетая -> Мисля че той го<mark> заслужава."]];
+    $.postCORS("http://127.0.0.1:5000/",{ body : input },function(response){
+        console.log(response);
 
-
-    if(response[0] == 1){
-            //var a = inputText.substring(0,index-1) + `<mark data-toggle="tooltip" data-placement="bottom" title='${err}'>` + inputText.substring(index,index+2) + "</mark>" + inputText.substring(index + 2) + " -> " + `${err}`;
-            document.getElementById("output").innerHTML = response[1];
-            document.getElementById("correct").innerHTML = "";
-    }        
-    else if(response[0] == 0){
-        document.getElementById("output").innerHTML = "";
-        var a = "Всичко е правилно!🎉";
-        document.getElementById("correct").innerHTML = a;
-    }
+        // има грешка в input-а
+        if(response[0] == 1){
+                //var a = inputText.substring(0,index-1) + `<mark data-toggle="tooltip" data-placement="bottom" title='${err}'>` + inputText.substring(index,index+2) + "</mark>" + inputText.substring(index + 2) + " -> " + `${err}`;
+                document.getElementById("output").innerHTML = response[1];
+                document.getElementById("correct").innerHTML = "";
+        }        
+        // няма грешка
+        else if(response[0] == 0){
+            document.getElementById("output").innerHTML = "";
+            var a = "Всичко е правилно!🎉";
+            document.getElementById("correct").innerHTML = a;
+        }
+    });
+    //var response = [1, 4, ["Липсва запетая -> Мисля<mark> че</mark> той го заслужава. <br>Липсва запетая -> Мисля че той го<mark> заслужава."]]; 
 }
+
+// TODO: butona da preblednqva dokato se pravi requesta
+// TODO: vkluchvane i izkluchvane na proverki s butoni. napr. nenujni zapetaiki
+
+
