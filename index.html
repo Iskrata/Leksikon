@@ -47,7 +47,15 @@
                     <div class="rounded" style="background-color: rgba(0, 255, 76, 0.4);">
                         <h2 class="text-white mb-4" id="correct"></h2>
                     </div>  
-                    <a class="btn btn-primary js-scroll-trigger" onclick="onSubmit()">Проверка</a>
+                    <div class="submitBtn">
+                        <div class="spinner-grow text-info" role="status" id="loadingAni">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <br>
+                        <a class="btn btn-primary js-scroll-trigger" onclick="onSubmit()" id="submitBtn">Проверка</a>
+                        
+                    </div>  
+
                 </div>
             </div>
         </header>

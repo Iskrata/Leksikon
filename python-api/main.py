@@ -6,6 +6,9 @@ import requests
 app = FlaskAPI(__name__)
 Dictionary=set(open("words.txt", encoding="utf8").read().split())
 
+# Показване на ненужните запетайки p.s Не работи изобщо добре!
+NENUJNA_ZAPTAIKA = False
+
 ### CORS section
 @app.after_request
 def after_request_func(response):
@@ -33,6 +36,7 @@ def mark(data, index):
         arr[index] = '<mark>' + arr[index] + '</mark>'
     else:
         arr[index-1] += '<mark>'
+        print(index)
         arr[index] += '</mark>'
     #print(arr)
     return (" ".join(arr))
@@ -75,7 +79,7 @@ def word_check(data):
 def punct_check(data):
     r = requests.get('https://us-central1-azbuki-ml.cloudfunctions.net/forwardApi/api?pnct=' + data.replace(',', '').replace(' ', '%20'))
     res_list = r.json()
-    data_list = data.replace(',', ' ,COMMA').replace('.', '').split()
+    data_list = data.replace(',', ' ,COMMA').replace('.', '').replace('?', '').replace('!', '').split()
     flag = 0
     return_data = ''
 
@@ -98,9 +102,10 @@ def punct_check(data):
                 return_data += 'Изпусната е запетайка -> ' + text + '<br>'
             if item == ',COMMA':
                 offset -= 1
-                text = mark(data, index + mark_offset)
-                flag = 1
-                return_data += 'Ненужна запетайка -> ' + text + '<br>'     
+                if NENUJNA_ZAPTAIKA:
+                    text = mark(data, index + mark_offset)
+                    flag = 1
+                    return_data += 'Ненужна запетайка -> ' + text + '<br>'     
             else:
                 print("Unhandled error: Invalid symbol at punct_check() - ", item, res_list[index+offset])
                 
@@ -126,3 +131,4 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 # TODO: razkarai unhandled error
+# TODO: napravi go da raboti s novi redove

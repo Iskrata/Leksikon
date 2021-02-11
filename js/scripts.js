@@ -46,6 +46,7 @@
             $("#mainNav").removeClass("navbar-shrink");
         }
     };
+
     // Collapse now if page is not at top
     navbarCollapse();
     // Collapse the navbar when page is scrolled
@@ -54,6 +55,7 @@
 
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
+    $("#loadingAni").hide();
   });
 
 // POST request jQuery
@@ -74,14 +76,25 @@ jQuery.postCORS = function(url, data, func) {
     });
 }
 
+jQuery.hideBtn = function(){
+    $("#submitBtn").hide(1000);
+    $("#loadingAni").show(1000);
+}
+
+jQuery.showBtn = function(){
+    $("#loadingAni").hide(1000);
+    $("#submitBtn").show(1000);
+}
+
 function onSubmit(){
+    $.hideBtn();
     var input = document.getElementById("exampleFormControlTextarea1").value;
 
     // примерен вход: Юнак без , рана не може
     // req
     $.postCORS("http://127.0.0.1:5000/",{ body : input },function(response){
         console.log(response);
-
+        $.showBtn();
         // има грешка в input-а
         if(response[0] == 1){
                 //var a = inputText.substring(0,index-1) + `<mark data-toggle="tooltip" data-placement="bottom" title='${err}'>` + inputText.substring(index,index+2) + "</mark>" + inputText.substring(index + 2) + " -> " + `${err}`;
@@ -98,7 +111,7 @@ function onSubmit(){
     //var response = [1, 4, ["Липсва запетая -> Мисля<mark> че</mark> той го заслужава. <br>Липсва запетая -> Мисля че той го<mark> заслужава."]]; 
 }
 
-// TODO: butona da preblednqva dokato se pravi requesta
+// TODO: podobrqvane na dizaina
 // TODO: vkluchvane i izkluchvane na proverki s butoni. napr. nenujni zapetaiki
 
 
