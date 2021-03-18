@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+  
+    "name": "Leksikon",
+    "description": "This extension will search for punctuation, grammatical and spelling mistakes.",
+    "version": "1.0",
+  
+    "browser_action": {
+     "default_icon": "Licon.png",
+     "default_title": "Click to check now",
+     "default_popup": "popup.html"
+    },
+
+    "optional_permissions": [
+        "tabs",
+        "topSites",
+        "<all_urls>"
+     ],
+
+    "permissions": [
+        "activeTab",
+        "contextMenus",
+        "storage",
+        "<all_urls>"
+    ]
+  }
