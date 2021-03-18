@@ -2,12 +2,12 @@
     "manifest_version": 3,
   
     "name": "Leksikon",
-    "description": "This extension will search for punctuation, grammatical and spelling mistakes.",
+    "description": "Тази наставка намира граматични, пунктуационни и правописни грешки.",
     "version": "1.0",
   
     "browser_action": {
      "default_icon": "Licon.png",
-     "default_title": "Click to check now",
+     "default_title": "Провери сега",
      "default_popup": "popup.html"
     },
 
