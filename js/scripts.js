@@ -92,7 +92,7 @@ function onSubmit(){
 
     // примерен вход: Юнак без , рана не може
     // req
-    $.postCORS("http://127.0.0.1:5000/",{ body : input },function(response){
+    $.postCORS("http://0.0.0.0:5000/",{ body : input },function(response){
         console.log(response);
         $.showBtn();
         // има грешка в input-а
