@@ -1,50 +1,55 @@
+#!pip install deplacy camphr 'unofficial-udify>=0.3.0' en-udify@https://github.com/PKSHATechnology-Research/camphr_models/releases/download/0.7.0/en_udify-0.7.tar.gz
+import time
+#import pkg_resources,imp
 import requests
+tic = time.perf_counter()
+#imp.reload(pkg_resources)
+import spacy
 
-def mark(data, index):
-    arr = data.split(' ')
-    if(index == 0):
-        arr[index] = '<mark>' + arr[index] + '</mark>'
-    else:
-        arr[index-1] += '<mark>'
-        arr[index] += '</mark>'
-    #print(arr)
-    return (" ".join(arr))
+nlp=spacy.load("en_udify")
+#doc=nlp("Близкият другар и роднина на Алеко Константинов - радикалдемократът Найчо Цанов който е имал възможност да наблюдава бъдещия писател при едно гостуване на семейството му във Видин, отбелязва нещо.")
+doc=nlp("Гладна мечок хоро не играе.")
+#doc=nlp("Членуването в българския език преминава през тежък път. Още през 1835 г. билкарят в „Болгарска граматика“ изследва българските говори и въвежда членуването според синтактичната функция на думата в изречението.")
+#doc=nlp("Уважаеми клиенти, сока е неохраняем.")
 
-def punct_check(data):
-    r = requests.get('https://us-central1-azbuki-ml.cloudfunctions.net/forwardApi/api?pnct=' + data.replace(',', '').replace(' ', '%20'))
-    res_list = r.json()
-    data_list = data.replace(',', ' ,COMMA').replace('.', '').split()
-    flag = 0
-    return_data = ''
+CHLENUVANE = True
+FORMA = True
 
-    # [tova che go ,COMMA kaza mi napomni]
-    # [ tova che go kaza mi napomni]
-    offset = 0
-    mark_offset = 0
-    print('data - > ', data_list, '\nres - > ', res_list)
-    for index, item in enumerate(data_list):
-        if index + offset > len(res_list):
-            break
-        if item == ',COMMA':
-            mark_offset -= 1
-        if item != res_list[index + offset]:
-            if res_list[index + offset] == ',COMMA':
-                offset += 1
-                print('index:', index, 'offset:', offset)
-                text = mark(data, index + mark_offset)
-                flag = 1
-                return_data += 'Изпусната е запетайка -> ' + text + '<br>'
-            if item == ',COMMA':
-                offset -= 1
-                text = mark(data, index + mark_offset)
-                flag = 1
-                return_data += 'Ненужна запетайка -> ' + text + '<br>'     
-            else:
-                print("Unhandled error: Invalid symbol at punct_check() - ", item, res_list[index+offset])
-                
-    if flag == 1:
-        return [1, return_data]
-    return [0, '']
+"""
+for token in doc:
+    print(token.text, token.lemma_, token.pos_, token.tag_, token.dep_,
+            token.shape_, token.is_alpha, token.is_stop)
+            """
+def chlenuvane(doc):
+    for token in doc:
+        if(token.dep_ == "nsubj"):
+            tt = str(token.text).strip()
+            r = requests.get('https://us-central1-azbuki-ml.cloudfunctions.net/forwardApi/api?pos=' + tt)
+            req_chlen = r.json()[0][0][2]
+            if(req_chlen == "Ncmsh"):
+                print("ГРЕШНО ЧЛЕНУВАНЕ ПРИ ДУМАТА -> " + token.text)
 
-#print(punct_check('Основните елементи в едно изречение, разглеждано от синтаксиса, са подлог, сказуемо, допълнение, определение и обстоятелствено пояснение.'))
-print(punct_check('Иван, който беше красив отиде да пазарува.'))
+def right_form(doc):
+    for token in doc:
+        pass
+
+for token in doc:
+    print(token.text, token.dep_, token.head.text, token.head.pos_, token.head.tag_,
+            [child for child in token.children])
+
+print('--chlenuvane--')
+chlenuvane(doc)
+print('--right-form--')
+right_form(doc)
+toc = time.perf_counter()
+print(f"Downloaded the tutorial in {toc - tic:0.4f} seconds")
+        
+    
+
+#import deplacy
+#deplacy.render(doc)
+#deplacy.serve(doc,port=None)
+
+
+# import graphviz
+# graphviz.Source(deplacy.dot(doc))
