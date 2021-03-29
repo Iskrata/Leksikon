@@ -1,189 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Лексикон</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Лексикон</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Какво предлагаме</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">За проекта</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Контакти</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Лексикон</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
 
-        
-        <!-- Главна страница-->
-        <header class="masthead">
-            <div class="container d-flex h-100 align-items-center">
-                <div class="mx-auto text-center">
-                    <blabla class="text-white mb-5" style="font-size: 50px;">Тествай Лексикон!</blabla>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" cols="60"></textarea>
-                    <div class="rounded" style="background-color: rgba(255, 0, 0, 0.4);">
-                        <h2 class="text-white mb-4" id="output"></h2>
-                    </div>   
-                    <div class="rounded" style="background-color: rgba(0, 255, 76, 0.4);">
-                        <h2 class="text-white mb-4" id="correct"></h2>
-                    </div>  
-                    <div class="submitBtn">
-                        <div class="spinner-grow text-info" role="status" id="loadingAni">
-                            <span class="sr-only">Loading...</span>
-                        </div>
-                        <br>
-                        <a class="btn btn-primary js-scroll-trigger" onclick="onSubmit()" id="submitBtn">Проверка</a>
-                        
-                    </div>  
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+    
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img class="navbar-brand icon" src="assets/img/logo.png" alt="main">
+      <a class="navbar-brand" href="#">Лексикон</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        <li><a href="#">Моята статстика</a></li>
+        <li><a href="#">Вход</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-                </div>
-            </div>
-        </header>
-        <!-- Какво предлагаме-->
-        <section class="about-section text-center" id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2 class="text-white mb-4">Лексикон</h2>
-                        <p class="text-white-50">
-                            това е текст, който ще се замести това е текст, който ще се замести това е текст, който ще се замести
-                            това е текст, който ще се замести това е текст, който ще се замести това е текст, който ще се замести
-                        </p>
-                    </div>
-                </div>
-                <img class="img-fluid" src="assets/img/ipad.png" alt="" />
-            </div>
-        </section>
-        <!-- За проекта-->
-        <section class="projects-section bg-light" id="projects">
-            <div class="container">
-                <!-- Featured Project Row-->
-                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="" /></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>Нашата цел</h4>
-                            <p class="text-black-50 mb-0">това е текст, който ще се замести това е текст, който ще се замести това е текст, който ще се замести</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project One Row-->
-                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-01.jpg" alt="" /></div>
-                    <div class="col-lg-6">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">Какво сме постигнали</h4>
-                                    <p class="mb-0 text-white-50">това е текст, който ще се замести това е текст, който ще се замести това е текст, който ще се замести</p>
-                                    <hr class="d-none d-lg-block mb-0 ml-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project Two Row-->
-                <div class="row justify-content-center no-gutters">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-02.jpg" alt="" /></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">Какво предстои</h4>
-                                    <p class="mb-0 text-white-50">това е текст, който ще се замести това е текст, който ще се замести това е текст, който ще се замести</p>
-                                    <hr class="d-none d-lg-block mb-0 mr-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Signup-->
-        <section class="signup-section" id="signup">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-lg-8 mx-auto text-center">
-                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                        <h2 class="text-white mb-5">Абонамирай се за отстъпки и новни за проекта!</h2>
-                        <form class="form-inline d-flex">
-                            <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." />
-                            <button class="btn btn-primary mx-auto" type="submit">Абонамент</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Contact-->
-        <section class="contact-section bg-black">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Адрес</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50">4923 Market Street, Orlando FL</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-envelope text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Ймейл</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Телефон</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50">+1 (555) 902-8832</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="social d-flex justify-content-center">
-                    <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                    <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © Leksikon 2021</div></footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <h1 class="tlt margin2">Демо проверка</h3>
+  <h5 class="margin">Провери твоя текст на български за граматични, пунктуационни<br> и правописни грешки с Лексикон.</h5>
+  <div class="btn-area">
+    <div class="test-textarea">
+        <div class="form-control" spellcheck="false" autocapitalize="off"  contenteditable="true" id="exampleFormControlTextarea1"></div>
+        <!-- <textarea class="form-control" name="try" id="exampleFormControlTextarea1" placeholder="Започни да пишеш..."></textarea> -->
+    </div>
+  </div>
+  <div class="submitBtn ">
+        <div class="spinner-grow text-info" role="status" id="loadingAni">
+            <span class="sr-only">Зареждане...</span>
+        </div>
+        <br>
+        <a class="btn btn-primary js-scroll-trigger btn-lg" onclick="onSubmit()" id="submitBtn">Проверка</a>  
+    </div> 
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <h3 class="margin2">Лексикон</h3>
+  <p class="margin">Близо 80% от българското общество допуска грешки на дневна база. Българският език е сложен, а грешките могат да развалят репутацията на бизнес или човек. Първата програма в България, която проверява за всички правила в българския<br> език, е Лексикон и сме горди да сложим край на грешките. </p>
+  <hr>
+  <a href="#" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-plus"></span>  Добави към Edge
+  </a>
+</div>
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">    
+  <h3 class="margin">Примери</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <!-- <img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image"> -->
+    </div>
+    <div class="col-sm-4"> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <!-- <img src="birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image"> -->
+    </div>
+    <div class="col-sm-4"> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <!-- <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image"> -->
+    </div>
+  </div>
+  <h3 class="margin">Кои сме ние?</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <!-- <img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image"> -->
+    </div>
+    <div class="col-sm-4"> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <!-- <img src="birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image"> -->
+    </div>
+    <div class="col-sm-4"> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <!-- <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image"> -->
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>Copyright © Leksikon 2021</a></p> 
+</footer>
+
+</body>
 </html>
