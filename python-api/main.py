@@ -116,7 +116,8 @@ def punct_check(data):
 @app.route("/", methods=['GET', 'POST'])
 def notes_list():
     if request.method == 'POST':
-        spell_check_resp = spell_check(request.data.get('body', ''))
+        data = request.data.get('body', '')
+        spell_check_resp = spell_check(data)
         word_check_resp = word_check(request.data.get('body', ''))
         punct_check_resp = punct_check(request.data.get('body', ''))
        
