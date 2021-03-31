@@ -1,0 +1,151 @@
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+}
+
+.raz {margin: 30px;}
+
+.margin-l {margin-top: 155px;}
+.margin {margin-top: 30px;}
+.margin-b {margin-bottom: 20px;}
+.margin2 {margin-bottom: 25px;}
+
+
+.container-fluid {
+  padding-top: 20px;
+  padding-bottom: 70px;
+}
+
+#block_container {
+  display: flex;
+  justify-content: center;
+}
+.bold {
+  font-weight: bold;
+}
+.light {
+  font-weight: lighter;
+}
+.price_btn {
+  font-weight: lighter!important;
+  color: black!important;
+}
+
+.opopo {
+  background-color: red !important;
+}
+
+  .pepe {
+    width: 50%;
+    position: relative;
+    float: left;
+  }
+
+  .pupu {
+    padding-left: 5%;
+    width: 50%;
+    position: relative;
+    float: right;
+  }
+
+.test-textarea{
+  margin: auto; 
+  text-align: left !important;
+  /* text-align: center; */
+  width: 40%;
+  height: 260px;
+}
+
+.form-control {
+  resize: none;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.btn-area {
+  margin: auto; 
+  position: relative;
+}
+
+.btn {
+  border: none;
+  font-weight: bold;
+  background-color: #94a4fb;
+  width: 25%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+.bg-steel {
+  background-color: #788cfd;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}

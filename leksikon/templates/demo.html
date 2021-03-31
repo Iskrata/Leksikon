@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-fluid bg-1 text-center">
+    <h1 class="tlt margin">Демо проверка</h3>
+    <h5 class="margin">Провери текст на български за граматични, пунктуационни<br> и правописни грешки с Лексикон.</h5>
+    <div class="btn-area">
+      <div class="test-textarea">
+          <div class="margin form-control" spellcheck="false" autocapitalize="off"  contenteditable="true" id="exampleFormControlTextarea1"></div>
+          <!-- <textarea class="form-control" name="try" id="exampleFormControlTextarea1" placeholder="Започни да пишеш..."></textarea> -->
+      </div>
+    </div>
+    <div class="submitBtn ">
+          <div class="spinner-grow text-info" role="status" id="loadingAni">
+              <span class="sr-only">Зареждане...</span>
+          </div>
+          <br>
+          <a class="btn btn-primary js-scroll-trigger btn-lg" onclick="onSubmit()" id="submitBtn">Проверка</a>  
+      </div> 
+  </div>
+{% endblock content %}
+
