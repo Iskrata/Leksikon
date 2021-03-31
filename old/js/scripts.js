@@ -1,3 +1,7 @@
+
+$('#popoverData').popover();
+$('#popoverOption').popover({ trigger: "hover" });
+
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
     $("#loadingAni").hide();
@@ -37,7 +41,9 @@ function onSubmit(){
 
     // примерен вход: Юнак без , рана не може
     // req
-    $.postCORS("http://15.237.27.239:5000/",{ body : input },function(response){
+
+    //http://15.237.27.239:5000/
+    $.postCORS("http://127.0.0.1:5000/",{ body : input },function(response){
         console.log(response);
         $.showBtn();
         // има грешка в input-а

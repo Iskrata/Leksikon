@@ -72,6 +72,8 @@ def word_check(data):
             text = mark(data, index)
             flag = 1
             return_data += 'Несъществуваща дума -> ' + text + '<br>'
+            #return_data += '<a id="popoverOption" class="btn" href="#" data-content="Несъществуваща дума" rel="popover" data-placement="bottom" data-original-title="Граматика">{text}</a>'.format(text = text)
+            # <a id="popoverOption" class="btn" href="#" data-content="Несъществуваща дума" rel="popover" data-placement="bottom" data-original-title="Граматика">text</a>
     if flag == 1:
         return [1, return_data]
     return [0, '']
