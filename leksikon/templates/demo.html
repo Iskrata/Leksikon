@@ -1,21 +1,111 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="container-fluid bg-1 text-center">
-    <h1 class="tlt margin">Демо проверка</h3>
-    <h5 class="margin">Провери текст на български за граматични, пунктуационни<br> и правописни грешки с Лексикон.</h5>
-    <div class="btn-area">
-      <div class="test-textarea">
-          <div class="margin form-control" spellcheck="false" autocapitalize="off"  contenteditable="true" id="exampleFormControlTextarea1"></div>
-          <!-- <textarea class="form-control" name="try" id="exampleFormControlTextarea1" placeholder="Започни да пишеш..."></textarea> -->
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Лексикон</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='index.js') }}"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+    
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img class="navbar-brand icon" src="assets/img/logo.png" alt="main">
+      <a class="navbar-brand" href="#">Лексикон</a>
     </div>
-    <div class="submitBtn ">
-          <div class="spinner-grow text-info" role="status" id="loadingAni">
-              <span class="sr-only">Зареждане...</span>
-          </div>
-          <br>
-          <a class="btn btn-primary js-scroll-trigger btn-lg" onclick="onSubmit()" id="submitBtn">Проверка</a>  
-      </div> 
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        <li><a href="#">Моята статстика</a></li>
+        <li><a href="#">Вход</a></li>
+      </ul>
+    </div>
   </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <h1 class="tlt margin2">Демо проверка</h3>
+  <h5 class="margin">Провери твоя текст на български за граматични, пунктуационни<br> и правописни грешки с Лексикон.</h5>
+  <div class="btn-area">
+    <div class="test-textarea">
+        <div class="form-control" spellcheck="false" autocapitalize="off"  contenteditable="true" id="exampleFormControlTextarea1"></div>
+        <!-- <textarea class="form-control" name="try" id="exampleFormControlTextarea1" placeholder="Започни да пишеш..."></textarea> -->
+    </div>
+  </div>
+  <div class="submitBtn ">
+        <div class="spinner-grow text-info" role="status" id="loadingAni">
+            <span class="sr-only">Зареждане...</span>
+        </div>
+        <br>
+        <a class="btn btn-primary js-scroll-trigger btn-lg" onclick="onSubmit()" id="submitBtn">Проверка</a>  
+    </div> 
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <h3 class="margin2">Лексикон</h3>
+  <p class="margin">Близо 80% от българското общество допуска грешки на дневна база. Българският език е сложен, а грешките могат да развалят репутацията на бизнес или човек. Първата програма в България, която проверява за всички правила в българския<br> език, е Лексикон и сме горди да сложим край на грешките. </p>
+  <hr>
+  <a href="#" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-plus"></span>  Добави към Edge
+  </a>
+</div>
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">    
+  <h3 class="margin">Примери</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <!-- <img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image"> -->
+    </div>
+    <div class="col-sm-4"> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <!-- <img src="birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image"> -->
+    </div>
+    <div class="col-sm-4"> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <!-- <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image"> -->
+    </div>
+  </div>
+  <h3 class="margin">Кои сме ние?</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <!-- <img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image"> -->
+    </div>
+    <div class="col-sm-4"> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <!-- <img src="birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image"> -->
+    </div>
+    <div class="col-sm-4"> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <!-- <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image"> -->
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>Copyright © Leksikon 2021</a></p> 
+</footer>
+
+</body>
+</html>
+
 {% endblock content %}
 
