@@ -1,11 +1,12 @@
 {% extends "layout.html" %}
 {% block content %}
+
 <div class="container-fluid bg-1 text-center">
-    <h1 class="tlt margin">Демо проверка</h3>
-    <h5 class="margin">Провери текст на български за граматични, пунктуационни<br> и правописни грешки с Лексикон.</h5>
+    <h1 class="tlt margin ">Демо проверка</h3>
+    <h5 class="margin margin-b">Провери текст на български за граматични, пунктуационни<br> и правописни грешки с Лексикон.</h5>
     <div class="btn-area">
       <div class="test-textarea">
-          <div class="margin form-control" spellcheck="false" autocapitalize="off"  contenteditable="true" id="exampleFormControlTextarea1"></div>
+          <div class="form-control" spellcheck="false" autocapitalize="off"  contenteditable="true" id="exampleFormControlTextarea1"></div>
           <!-- <textarea class="form-control" name="try" id="exampleFormControlTextarea1" placeholder="Започни да пишеш..."></textarea> -->
       </div>
     </div>
@@ -14,8 +15,9 @@
               <span class="sr-only">Зареждане...</span>
           </div>
           <br>
-          <a class="btn btn-primary js-scroll-trigger btn-lg" onclick="onSubmit()" id="submitBtn">Проверка</a>  
+          <button style="width: 18%; margin-right: 20px;" class="btn btn-outline-dark js-scroll-trigger btn-lg" id="deleteBtn">Изтриване</button> 
+          <button style="width: 18%;" class="btn btn-outline-dark js-scroll-trigger btn-lg" id="submitBtn">Проверка</button>  
       </div> 
   </div>
+<script type=text/javascript src="{{ url_for('static', filename='index.js') }}"></script>
 {% endblock content %}
-

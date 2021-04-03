@@ -4,10 +4,15 @@ body {
   margin-top: 5rem;
 }
 
+mark {
+  background-color: #919ff167;
+}
+
+
 .raz {margin: 30px;}
 
 .margin-l {margin-top: 155px;}
-.margin {margin-top: 30px;}
+.margin {margin-top: 10px;}
 .margin-b {margin-bottom: 20px;}
 .margin2 {margin-bottom: 25px;}
 
@@ -29,7 +34,7 @@ body {
 }
 .price_btn {
   font-weight: lighter!important;
-  color: black!important;
+  /* color: black!important; */
 }
 
 .opopo {
