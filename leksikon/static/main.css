@@ -4,6 +4,11 @@ body {
   margin-top: 5rem;
 }
 
+mark {
+  background-color: #919ff167;
+}
+
+
 .raz {margin: 30px;}
 
 .margin-l {margin-top: 155px;}
@@ -29,7 +34,7 @@ body {
 }
 .price_btn {
   font-weight: lighter!important;
-  color: black!important;
+  /* color: black!important; */
 }
 
 .opopo {
